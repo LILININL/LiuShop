@@ -1,0 +1,141 @@
+object HOSxPLiulinProductEntryForm: THOSxPLiulinProductEntryForm
+  Left = 0
+  Top = 0
+  Caption = 'HOSxPLiulinProductEntryForm'
+  ClientHeight = 183
+  ClientWidth = 495
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object cxTextEdit1: TcxTextEdit
+    Left = 84
+    Top = 53
+    TabOrder = 0
+    Width = 121
+  end
+  object cxTextEdit2: TcxTextEdit
+    Left = 84
+    Top = 86
+    TabOrder = 1
+    Width = 121
+  end
+  object cxLabel1: TcxLabel
+    Left = 16
+    Top = 54
+    Caption = #3594#3639#3656#3629'-'#3609#3634#3617#3626#3585#3640#3621
+    Transparent = True
+  end
+  object cxLabel2: TcxLabel
+    Left = 24
+    Top = 87
+    Caption = #3619#3634#3588#3634
+    Transparent = True
+  end
+  object cxLabel3: TcxLabel
+    Left = 8
+    Top = 134
+    Caption = 'Category Name'
+    Transparent = True
+  end
+  object cxLabel4: TcxLabel
+    Left = 224
+    Top = 54
+    Caption = 'Supplier Name'
+    Transparent = True
+  end
+  object cxLabel5: TcxLabel
+    Left = 224
+    Top = 87
+    Caption = 'Type Name'
+    Transparent = True
+  end
+  object cxButton1: TcxButton
+    Left = 376
+    Top = 8
+    Width = 75
+    Height = 25
+    Caption = #3611#3636#3604
+    TabOrder = 7
+    OnClick = cxButton1Click
+  end
+  object cxButton2: TcxButton
+    Left = 280
+    Top = 131
+    Width = 75
+    Height = 25
+    Caption = #3621#3610
+    TabOrder = 8
+    OnClick = cxButton2Click
+  end
+  object cxButton3: TcxButton
+    Left = 376
+    Top = 131
+    Width = 75
+    Height = 25
+    Caption = #3610#3633#3609#3607#3638#3585
+    TabOrder = 9
+    OnClick = cxButton3Click
+  end
+  object cxLookupComboBox1: TcxLookupComboBox
+    Left = 302
+    Top = 53
+    Properties.IncrementalFilteringOptions = [ifoHighlightSearchText, ifoUseContainsOperator]
+    Properties.ListColumns = <>
+    Properties.ListSource = DataSourceSup
+    TabOrder = 10
+    Width = 171
+  end
+  object cxLookupComboBox2: TcxLookupComboBox
+    Left = 302
+    Top = 86
+    Properties.IncrementalFilteringOptions = [ifoHighlightSearchText, ifoUseContainsOperator]
+    Properties.ListColumns = <>
+    Properties.ListSource = DataSourceType
+    TabOrder = 11
+    Width = 163
+  end
+  object cxLookupComboBox3: TcxLookupComboBox
+    Left = 93
+    Top = 133
+    Properties.IncrementalFilteringOptions = [ifoHighlightSearchText, ifoUseContainsOperator]
+    Properties.ListColumns = <>
+    Properties.ListSource = DataSourceCate
+    TabOrder = 12
+    Width = 145
+  end
+  object DataSourceType: TDataSource
+    Left = 432
+    Top = 136
+  end
+  object DataSourceCate: TDataSource
+    Left = 128
+    Top = 136
+  end
+  object DataSourceSup: TDataSource
+    Left = 248
+  end
+  object CategoryCDS: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 200
+    Top = 136
+  end
+  object TypeCDS: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 424
+    Top = 96
+  end
+  object SupplierCDS: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 280
+  end
+end

@@ -1,0 +1,50 @@
+package HOSxPLiulinPackage;
+
+{$R *.res}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  ApplicationDBPackage,
+  ApplicationSupportPackage,
+  rbRCL1715,
+  rbRTL1715,
+  rbDB1715,
+  cxPivotGridRS15;
+
+contains
+  HOSxPLiulinCustomerListFormUnit in 'source\HOSxPLiulinCustomerListFormUnit.pas' {HOSxPLiulinCustomerListForm},
+  HOSxPLiulinEmployeeFormUnit in 'source\HOSxPLiulinEmployeeFormUnit.pas' {HOSxPLiulinEmployeeListForm},
+  HOSxPLiulinCustomerEntryFormUnit in 'source\HOSxPLiulinCustomerEntryFormUnit.pas' {HOSxPLiulinCustomerEntryForm},
+  HOSxPLiulinEmployeeEntryFormUnit in 'source\HOSxPLiulinEmployeeEntryFormUnit.pas' {HOSxPLiulinEmployeeEntryForm},
+  HOSxPLiulinProductListFromUnit in 'source\HOSxPLiulinProductListFromUnit.pas' {HOSxPLiulinProductListFrom},
+  HOSxPLiulinProductEntryFormUnit in 'source\HOSxPLiulinProductEntryFormUnit.pas' {HOSxPLiulinProductEntryForm},
+  HOSxPLiulinSupplierListFormUnit in 'source\HOSxPLiulinSupplierListFormUnit.pas' {HOSxPLiulinSupplierListForm},
+  HOSxPLiulinSupplierEntryFormUnit in 'source\HOSxPLiulinSupplierEntryFormUnit.pas' {HOSxPLiulinSupplierEntryForm},
+  HOSxPLiulinCategoryListFormUnit in 'source\HOSxPLiulinCategoryListFormUnit.pas' {HOSxPLiulinCategoryListForm},
+  HOSxPLiulinCategoryEntryFormUnit in 'source\HOSxPLiulinCategoryEntryFormUnit.pas' {HOSxPLiulinCategoryEntryForm},
+  HOSxPLiulinTypeListFormUnit in 'source\HOSxPLiulinTypeListFormUnit.pas' {HOSxPLiulinTypeListForm},
+  HOSxPLiulinTypeEntryFormUnit in 'source\HOSxPLiulinTypeEntryFormUnit.pas' {HOSxPLiulinTypeEntryForm};
+
+end.

@@ -1,0 +1,92 @@
+object HOSxPLiulinTypeListFrom: THOSxPLiulinTypeListFrom
+  Left = 0
+  Top = 0
+  Caption = 'HOSxPLiulinTypeListFrom'
+  ClientHeight = 506
+  ClientWidth = 832
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object cxGrid1: TcxGrid
+    Left = 8
+    Top = 8
+    Width = 745
+    Height = 425
+    TabOrder = 0
+    object cxGrid1DBTableView1: TcxGridDBTableView
+      Navigator.Buttons.CustomButtons = <>
+      Navigator.Buttons.First.Visible = True
+      Navigator.Buttons.PriorPage.Visible = True
+      Navigator.Buttons.Prior.Visible = True
+      Navigator.Buttons.Next.Visible = True
+      Navigator.Buttons.NextPage.Visible = True
+      Navigator.Buttons.Last.Visible = True
+      Navigator.Buttons.Insert.Visible = True
+      Navigator.Buttons.Append.Visible = False
+      Navigator.Buttons.Delete.Visible = True
+      Navigator.Buttons.Edit.Visible = True
+      Navigator.Buttons.Post.Visible = True
+      Navigator.Buttons.Cancel.Visible = True
+      Navigator.Buttons.Refresh.Visible = True
+      Navigator.Buttons.SaveBookmark.Visible = True
+      Navigator.Buttons.GotoBookmark.Visible = True
+      Navigator.Buttons.Filter.Visible = True
+      ScrollbarAnnotations.CustomAnnotations = <>
+      DataController.DataSource = DataSource1
+      DataController.Summary.DefaultGroupSummaryItems = <>
+      DataController.Summary.FooterSummaryItems = <>
+      DataController.Summary.SummaryGroups = <>
+      object cxGrid1DBTableView1Column1: TcxGridDBColumn
+        Caption = 'ID'
+        DataBinding.FieldName = 'liulin_product_id'
+      end
+      object cxGrid1DBTableView1Column2: TcxGridDBColumn
+        Caption = #3594#3639#3656#3629#3626#3636#3609#3588#3657#3634
+        DataBinding.FieldName = 'liulin_product_name'
+        Width = 370
+      end
+      object cxGrid1DBTableView1Column3: TcxGridDBColumn
+        Caption = #3619#3634#3588#3634#3626#3636#3609#3588#3657#3634
+        DataBinding.FieldName = 'liulin_product_price'
+        Width = 142
+      end
+    end
+    object cxGrid1Level1: TcxGridLevel
+      GridView = cxGrid1DBTableView1
+    end
+  end
+  object cxButton1: TcxButton
+    Left = 32
+    Top = 464
+    Width = 75
+    Height = 25
+    Caption = 'cxButton1'
+    TabOrder = 1
+  end
+  object cxButton2: TcxButton
+    Left = 128
+    Top = 464
+    Width = 75
+    Height = 25
+    Caption = 'cxButton1'
+    TabOrder = 2
+  end
+  object DataSource1: TDataSource
+    DataSet = ProductCDS
+    Left = 712
+    Top = 16
+  end
+  object ProductCDS: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 672
+    Top = 16
+  end
+end

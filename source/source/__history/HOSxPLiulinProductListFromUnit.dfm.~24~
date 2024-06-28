@@ -1,0 +1,183 @@
+object HOSxPLiulinProductListFrom: THOSxPLiulinProductListFrom
+  Left = 0
+  Top = 0
+  Caption = 'HOSxPLiulinProductListFrom'
+  ClientHeight = 528
+  ClientWidth = 705
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  FormStyle = fsMDIChild
+  OldCreateOrder = False
+  Position = poOwnerFormCenter
+  Visible = True
+  OnClose = FormClose
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object cxGroupBox1: TcxGroupBox
+    Left = 0
+    Top = 97
+    Align = alClient
+    Caption = #3619#3634#3618#3585#3634#3619
+    TabOrder = 0
+    Height = 390
+    Width = 705
+    object cxGrid1: TcxGrid
+      Left = 2
+      Top = 18
+      Width = 701
+      Height = 370
+      Align = alClient
+      TabOrder = 0
+      object cxGrid1DBTableView1: TcxGridDBTableView
+        Navigator.Buttons.CustomButtons = <>
+        Navigator.Buttons.First.Visible = True
+        Navigator.Buttons.PriorPage.Visible = True
+        Navigator.Buttons.Prior.Visible = True
+        Navigator.Buttons.Next.Visible = True
+        Navigator.Buttons.NextPage.Visible = True
+        Navigator.Buttons.Last.Visible = True
+        Navigator.Buttons.Insert.Visible = True
+        Navigator.Buttons.Append.Visible = False
+        Navigator.Buttons.Delete.Visible = True
+        Navigator.Buttons.Edit.Visible = True
+        Navigator.Buttons.Post.Visible = True
+        Navigator.Buttons.Cancel.Visible = True
+        Navigator.Buttons.Refresh.Visible = True
+        Navigator.Buttons.SaveBookmark.Visible = True
+        Navigator.Buttons.GotoBookmark.Visible = True
+        Navigator.Buttons.Filter.Visible = True
+        ScrollbarAnnotations.CustomAnnotations = <>
+        DataController.DataSource = DataSource1
+        DataController.Summary.DefaultGroupSummaryItems = <>
+        DataController.Summary.FooterSummaryItems = <>
+        DataController.Summary.SummaryGroups = <>
+        object cxGrid1DBTableView1Column1: TcxGridDBColumn
+          Caption = 'ID'
+          DataBinding.FieldName = 'liulin_product_id'
+        end
+        object cxGrid1DBTableView1Column2: TcxGridDBColumn
+          Caption = #3594#3639#3656#3629#3626#3636#3609#3588#3657#3634
+          DataBinding.FieldName = 'liulin_product_name'
+          Width = 108
+        end
+        object cxGrid1DBTableView1Column3: TcxGridDBColumn
+          Caption = #3619#3634#3588#3634#3626#3636#3609#3588#3657#3634
+          DataBinding.FieldName = 'liulin_product_price'
+          Width = 142
+        end
+        object cxGrid1DBTableView1Column4: TcxGridDBColumn
+          Caption = 'Category'
+          DataBinding.FieldName = 'liulin_category_name'
+          Width = 120
+        end
+        object cxGrid1DBTableView1Column5: TcxGridDBColumn
+          Caption = 'Supplier'
+          DataBinding.FieldName = 'liulin_supplier_name'
+          Width = 128
+        end
+        object cxGrid1DBTableView1Column6: TcxGridDBColumn
+          Caption = 'Type'
+          DataBinding.FieldName = 'liulin_type_name'
+          Width = 130
+        end
+      end
+      object cxGrid1Level1: TcxGridLevel
+        GridView = cxGrid1DBTableView1
+      end
+    end
+  end
+  object cxGroupBox2: TcxGroupBox
+    Left = 0
+    Top = 0
+    Align = alTop
+    Caption = #3588#3657#3609#3627#3634
+    TabOrder = 1
+    Height = 97
+    Width = 705
+    object cxButton5: TcxButton
+      Left = 215
+      Top = 45
+      Width = 75
+      Height = 25
+      Caption = #3588#3657#3609#3627#3634
+      TabOrder = 0
+      OnClick = cxButton5Click
+    end
+    object cxTextEdit1: TcxTextEdit
+      Left = 61
+      Top = 47
+      Properties.OnChange = PropertiesChange
+      TabOrder = 1
+      Width = 148
+    end
+    object cxLabel1: TcxLabel
+      Left = 37
+      Top = 48
+      Caption = #3594#3639#3656#3629
+      Transparent = True
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 487
+    Width = 705
+    Height = 41
+    Align = alBottom
+    TabOrder = 2
+    ExplicitLeft = 416
+    ExplicitTop = 8
+    ExplicitWidth = 185
+    object cxButton1: TcxButton
+      Left = 103
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = #3648#3614#3636#3656#3617
+      TabOrder = 0
+      OnClick = cxButton1Click
+    end
+    object cxButton2: TcxButton
+      Left = 8
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = #3649#3585#3657#3652#3586
+      TabOrder = 1
+      OnClick = cxButton2Click
+    end
+    object cxButton3: TcxButton
+      Left = 215
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'Excel'
+      TabOrder = 2
+      OnClick = cxButton3Click
+    end
+    object cxButton4: TcxButton
+      Left = 296
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'Log'
+      TabOrder = 3
+      OnClick = cxButton4Click
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = ProductCDS
+    Left = 672
+    Top = 496
+  end
+  object ProductCDS: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 632
+    Top = 496
+  end
+end

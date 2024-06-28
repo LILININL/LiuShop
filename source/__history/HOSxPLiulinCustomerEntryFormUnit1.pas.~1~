@@ -1,0 +1,24 @@
+unit HOSxPLiulinCustomerEntryFormUnit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs;
+
+type
+  THOSxPLiulinCustomerEntryFormUnit3 = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  HOSxPLiulinCustomerEntryFormUnit3: THOSxPLiulinCustomerEntryFormUnit3;
+
+implementation
+
+{$R *.dfm}
+
+end.

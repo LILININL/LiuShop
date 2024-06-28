@@ -1,0 +1,104 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 177
+  ClientWidth = 496
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object cxTextEdit1: TcxTextEdit
+    Left = 84
+    Top = 53
+    TabOrder = 0
+    Width = 121
+  end
+  object cxLabel1: TcxLabel
+    Left = 16
+    Top = 54
+    Caption = #3594#3639#3656#3629'-'#3609#3634#3617#3626#3585#3640#3621
+  end
+  object cxLabel2: TcxLabel
+    Left = 8
+    Top = 87
+    Caption = #3623#3633#3609#3607#3637#3656' Order :'
+  end
+  object cxLabel4: TcxLabel
+    Left = 216
+    Top = 54
+    Caption = 'Employee Name'
+  end
+  object cxLabel5: TcxLabel
+    Left = 216
+    Top = 87
+    Caption = 'Customer Name'
+  end
+  object cxButton1: TcxButton
+    Left = 363
+    Top = 8
+    Width = 75
+    Height = 25
+    Caption = #3611#3636#3604
+    TabOrder = 5
+  end
+  object cxButton2: TcxButton
+    Left = 280
+    Top = 131
+    Width = 75
+    Height = 25
+    Caption = #3621#3610
+    TabOrder = 6
+  end
+  object cxButton3: TcxButton
+    Left = 363
+    Top = 131
+    Width = 75
+    Height = 25
+    Caption = #3610#3633#3609#3607#3638#3585
+    TabOrder = 7
+  end
+  object cxLookupComboBox1: TcxLookupComboBox
+    Left = 302
+    Top = 53
+    Properties.IncrementalFilteringOptions = [ifoHighlightSearchText, ifoUseContainsOperator]
+    Properties.ListColumns = <>
+    Properties.ListSource = DataSourceEmp
+    TabOrder = 8
+    Width = 171
+  end
+  object cxLookupComboBox2: TcxLookupComboBox
+    Left = 302
+    Top = 86
+    Properties.IncrementalFilteringOptions = [ifoHighlightSearchText, ifoUseContainsOperator]
+    Properties.ListColumns = <>
+    Properties.ListSource = DataSourceCus
+    TabOrder = 9
+    Width = 171
+  end
+  object DataSourceCus: TDataSource
+    DataSet = CustomerCDS
+    Left = 464
+    Top = 80
+  end
+  object DataSourceEmp: TDataSource
+    DataSet = EmployeeCDS
+    Left = 216
+  end
+  object CustomerCDS: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 464
+    Top = 136
+  end
+  object EmployeeCDS: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 288
+  end
+end

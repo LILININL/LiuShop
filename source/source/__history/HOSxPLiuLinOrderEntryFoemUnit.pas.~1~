@@ -1,0 +1,45 @@
+unit HOSxPLiuLinOrderEntryFoemUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters,
+  cxContainer, cxEdit, dxSkinsCore, dxSkinBlack, dxSkinBlue, dxSkinCaramel,
+  dxSkinCoffee, dxSkinGlassOceans, dxSkiniMaginary, dxSkinLilian,
+  dxSkinLiquidSky, dxSkinLondonLiquidSky, dxSkinMcSkin, dxSkinMoneyTwins,
+  dxSkinOffice2007Black, dxSkinOffice2007Blue, dxSkinOffice2007Green,
+  dxSkinOffice2007Pink, dxSkinOffice2007Silver, dxSkinsDefaultPainters, Menus,
+  DB, DBClient, cxMaskEdit, cxDropDownEdit, cxLookupEdit, cxDBLookupEdit,
+  cxDBLookupComboBox, StdCtrls, cxButtons, cxLabel, cxTextEdit;
+
+type
+  TForm1 = class(TForm)
+    cxTextEdit1: TcxTextEdit;
+    cxLabel1: TcxLabel;
+    cxLabel2: TcxLabel;
+    cxLabel4: TcxLabel;
+    cxLabel5: TcxLabel;
+    cxButton1: TcxButton;
+    cxButton2: TcxButton;
+    cxButton3: TcxButton;
+    cxLookupComboBox1: TcxLookupComboBox;
+    cxLookupComboBox2: TcxLookupComboBox;
+    DataSourceCus: TDataSource;
+    DataSourceEmp: TDataSource;
+    CustomerCDS: TClientDataSet;
+    EmployeeCDS: TClientDataSet;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+end.

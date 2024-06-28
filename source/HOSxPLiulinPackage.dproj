@@ -1,0 +1,177 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{8874A648-0DD5-4E1D-8A51-5CD9C1848FD3}</ProjectGuid>
+			<MainSource>HOSxPLiulinPackage.dpk</MainSource>
+			<ProjectVersion>12.2</ProjectVersion>
+			<Base>True</Base>
+			<Config Condition="'$(Config)'==''">Release</Config>
+			<Platform>Win32</Platform>
+			<DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+			<AppType>Package</AppType>
+			<FrameworkType>None</FrameworkType>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<GenPackage>true</GenPackage>
+			<DCC_DcuOutput>.\$(Config)\$(Platform)</DCC_DcuOutput>
+			<DCC_ImageBase>00400000</DCC_ImageBase>
+			<DCC_UnitAlias>WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;$(DCC_UnitAlias)</DCC_UnitAlias>
+			<DCC_CBuilderOutput>All</DCC_CBuilderOutput>
+			<DCC_E>false</DCC_E>
+			<DCC_S>false</DCC_S>
+			<GenDll>true</GenDll>
+			<DCC_N>false</DCC_N>
+			<DCC_F>false</DCC_F>
+			<DCC_K>false</DCC_K>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<DCC_Optimize>false</DCC_Optimize>
+			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+			<DCC_BplOutput>C:\Users\Asus\AppData\Roaming\BMS\HOSxPXE4</DCC_BplOutput>
+			<DCC_DcpOutput>C:\Users\Asus\AppData\Roaming\BMS\HOSxPXE4</DCC_DcpOutput>
+			<DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+			<DCC_UnitSearchPath>D:\Delphi_new\ApplicationBaseEXE;D:\Delphi_new\ApplicationBaseEXE\BPL;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<DCC_UnitSearchPath>D:\Delphi_new\ApplicationBaseEXE;D:\Delphi_new\ApplicationBaseEXE\BPL;C:\Users\Asus\AppData\Roaming\BMS\HOSxPXE4;C:\Users\Asus\AppData\Roaming\BMS\HOSxPXE4\BPL;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+			<DCC_BplOutput>C:\Users\Asus\AppData\Roaming\BMS\HOSxPXE4\</DCC_BplOutput>
+			<DCC_DcpOutput>C:\Users\Asus\AppData\Roaming\BMS\HOSxPXE4\</DCC_DcpOutput>
+			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<DCC_DebugInformation>false</DCC_DebugInformation>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="HOSxPLiulinPackage.dpk">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="rtl.dcp"/>
+			<DCCReference Include="ApplicationDBPackage.dcp"/>
+			<DCCReference Include="ApplicationSupportPackage.dcp"/>
+			<DCCReference Include="rbRCL1715.dcp"/>
+			<DCCReference Include="rbRTL1715.dcp"/>
+			<DCCReference Include="rbDB1715.dcp"/>
+			<DCCReference Include="cxPivotGridRS15.dcp"/>
+			<DCCReference Include="source\HOSxPLiulinCustomerListFormUnit.pas">
+				<Form>HOSxPLiulinCustomerListForm</Form>
+			</DCCReference>
+			<DCCReference Include="source\HOSxPLiulinEmployeeFormUnit.pas">
+				<Form>HOSxPLiulinEmployeeListForm</Form>
+			</DCCReference>
+			<DCCReference Include="source\HOSxPLiulinCustomerEntryFormUnit.pas">
+				<Form>HOSxPLiulinCustomerEntryForm</Form>
+			</DCCReference>
+			<DCCReference Include="source\HOSxPLiulinEmployeeEntryFormUnit.pas">
+				<Form>HOSxPLiulinEmployeeEntryForm</Form>
+			</DCCReference>
+			<DCCReference Include="source\HOSxPLiulinProductListFromUnit.pas">
+				<Form>HOSxPLiulinProductListFrom</Form>
+			</DCCReference>
+			<DCCReference Include="source\HOSxPLiulinProductEntryFormUnit.pas">
+				<Form>HOSxPLiulinProductEntryForm</Form>
+			</DCCReference>
+			<DCCReference Include="source\HOSxPLiulinSupplierListFormUnit.pas">
+				<Form>HOSxPLiulinSupplierListForm</Form>
+			</DCCReference>
+			<DCCReference Include="source\HOSxPLiulinSupplierEntryFormUnit.pas">
+				<Form>HOSxPLiulinSupplierEntryForm</Form>
+			</DCCReference>
+			<DCCReference Include="source\HOSxPLiulinCategoryListFormUnit.pas">
+				<Form>HOSxPLiulinCategoryListForm</Form>
+			</DCCReference>
+			<DCCReference Include="source\HOSxPLiulinCategoryEntryFormUnit.pas">
+				<Form>HOSxPLiulinCategoryEntryForm</Form>
+			</DCCReference>
+			<DCCReference Include="source\HOSxPLiulinTypeListFormUnit.pas">
+				<Form>HOSxPLiulinTypeListForm</Form>
+			</DCCReference>
+			<DCCReference Include="source\HOSxPLiulinTypeEntryFormUnit.pas">
+				<Form>HOSxPLiulinTypeEntryForm</Form>
+			</DCCReference>
+			<DCCReference Include="source\HOSxPLiulinOrderListFormUnit.pas">
+				<Form>HOSxPLiulinOrderListForm</Form>
+			</DCCReference>
+			<DCCReference Include="source\HOSxPLiuLinOrderEntryFormUnit.pas">
+				<Form>HOSxPLiuLinOrderEntryForm</Form>
+			</DCCReference>
+			<DCCReference Include="source\HOSxPLiulinOrderDetailListFormUnit.pas">
+				<Form>HOSxPLiulinOrderDetailListForm</Form>
+			</DCCReference>
+			<DCCReference Include="source\HOSxPOrderDetailEntryFormUnit.pas">
+				<Form>HOSxPOrderDetailEntryForm</Form>
+			</DCCReference>
+			<None Include="ModelSupport_HOSxPLiulinPackage\default.txaPackage"/>
+			<None Include="ModelSupport_HOSxPLiulinPackage\default.txvpck"/>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+		<Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\8.0\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\8.0\UserTools.proj"/>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType>Package</Borland.ProjectType>
+			<BorlandProject>
+				<Delphi.Personality>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1054</VersionInfo>
+						<VersionInfo Name="CodePage">874</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName"/>
+						<VersionInfoKeys Name="FileDescription"/>
+						<VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName"/>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<Parameters>
+						<Parameters Name="HostApplication">C:\Users\Asus\AppData\Roaming\BMS\HOSxPXE4\StartApplication.cmd</Parameters>
+					</Parameters>
+					<Source>
+						<Source Name="MainSource">HOSxPLiulinPackage.dpk</Source>
+					</Source>
+				</Delphi.Personality>
+				<Platforms>
+					<Platform value="Win32">True</Platform>
+				</Platforms>
+				<ModelSupport>True</ModelSupport>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+	</Project>

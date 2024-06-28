@@ -1,0 +1,152 @@
+unit HOSxPLiulinSupplierListFormUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters,
+  dxSkinsCore, dxSkinBlack, dxSkinBlue, dxSkinCaramel, dxSkinCoffee,
+  dxSkinGlassOceans, dxSkiniMaginary, dxSkinLilian, dxSkinLiquidSky,
+  dxSkinLondonLiquidSky, dxSkinMcSkin, dxSkinMoneyTwins, dxSkinOffice2007Black,
+  dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Pink,
+  dxSkinOffice2007Silver, dxSkinsDefaultPainters, cxStyles, cxCustomData,
+  cxFilter, cxData, cxDataStorage, cxEdit, cxNavigator, dxDateRanges,
+  dxScrollbarAnnotations, DB, cxDBData, cxGridLevel, cxClasses,
+  cxGridCustomView, cxGridCustomTableView, cxGridTableView, cxGridDBTableView,
+  cxGrid, Menus, DBClient, StdCtrls, cxButtons, cxContainer, cxLabel,
+  cxTextEdit, cxGroupBox, ExtCtrls, JvExExtCtrls, JvExtComponent, JvPanel;
+
+type
+  THOSxPLiulinSupplierListForm = class(TForm)
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    cxButton1: TcxButton;
+    cxButton2: TcxButton;
+    DataSource1: TDataSource;
+    SupplierCDS: TClientDataSet;
+    cxGrid1DBTableView1Column1: TcxGridDBColumn;
+    cxGrid1DBTableView1Column2: TcxGridDBColumn;
+    cxGrid1DBTableView1Column3: TcxGridDBColumn;
+    JvPanel1: TJvPanel;
+    cxGroupBox1: TcxGroupBox;
+    cxGroupBox2: TcxGroupBox;
+    cxButton3: TcxButton;
+    cxButton4: TcxButton;
+    cxButton5: TcxButton;
+    cxTextEdit1: TcxTextEdit;
+    cxLabel1: TcxLabel;
+    procedure FormCreate(Sender: TObject);
+    procedure cxButton1Click(Sender: TObject);
+    procedure cxButton2Click(Sender: TObject);
+    procedure cxTextEdit1PropertiesChange(Sender: TObject);
+    procedure cxButton5Click(Sender: TObject);
+    procedure cxButton3Click(Sender: TObject);
+    procedure cxButton4Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    { Private declarations }
+    procedure DoRefreshData;
+    procedure DoAddSupplier;
+    procedure DoEditSupplier;
+    procedure DoSearchSupplier(const AFilter: string);
+  public
+    { Public declarations }
+  end;
+
+var
+  HOSxPLiulinSupplierListForm: THOSxPLiulinSupplierListForm;
+
+implementation
+
+uses BMSApplicationUtil, HOSxPDMU, HOSxPLiulinSupplierEntryFormUnit;
+
+{$R *.dfm}
+
+procedure THOSxPLiulinSupplierListForm.cxButton1Click(Sender: TObject);
+begin
+  DoEditSupplier;
+end;
+
+procedure THOSxPLiulinSupplierListForm.cxButton2Click(Sender: TObject);
+begin
+  DoAddSupplier;
+end;
+
+procedure THOSxPLiulinSupplierListForm.cxButton3Click(Sender: TObject);
+begin
+  // ปุ่ม Excel
+  if SupplierCDS.RecordCount = 0 then
+    Exit;
+  DoExportCxGridToExcel(cxGrid1);
+end;
+
+procedure THOSxPLiulinSupplierListForm.cxButton4Click(Sender: TObject);
+begin
+  // ปุ่ม Log
+  SafeLoadPackage('HOSxPUserManagerPackage.bpl');
+  ExecuteRTTIFunction
+    ('HOSxPUserManagerLogViewerFormUnit.THOSxPUserManagerLogViewerForm',
+    'DoShowForm', ['liulin_supplier', '']);
+end;
+
+procedure THOSxPLiulinSupplierListForm.cxButton5Click(Sender: TObject);
+begin
+  // ปุ่มค้นหา
+  DoSearchSupplier(cxTextEdit1.Text);
+end;
+
+procedure THOSxPLiulinSupplierListForm.cxTextEdit1PropertiesChange
+  (Sender: TObject);
+begin
+  // ช่องค้นหา
+  DoSearchSupplier(cxTextEdit1.Text);
+end;
+
+procedure THOSxPLiulinSupplierListForm.DoRefreshData;
+begin
+  SupplierCDS.Data := HOSxP_GetDataSet
+    ('SELECT liulin_supplier_id, liulin_supplier_name, liulin_supplier_contact FROM liulin_supplier;');
+end;
+
+procedure THOSxPLiulinSupplierListForm.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  Action := cafree;
+end;
+
+procedure THOSxPLiulinSupplierListForm.FormCreate(Sender: TObject);
+begin
+  DoRefreshData;
+end;
+
+procedure THOSxPLiulinSupplierListForm.DoAddSupplier;
+begin
+  THOSxPLiulinSupplierEntryForm.DoShowForm(SupplierCDS, 0, True);
+  DoRefreshData;
+end;
+
+procedure THOSxPLiulinSupplierListForm.DoEditSupplier;
+begin
+  if SupplierCDS.RecordCount = 0 then
+    Exit;
+  THOSxPLiulinSupplierEntryForm.DoShowForm(SupplierCDS,
+    SupplierCDS.FieldByName('liulin_supplier_id').AsInteger, False);
+  DoRefreshData;
+end;
+
+procedure THOSxPLiulinSupplierListForm.DoSearchSupplier(const AFilter: string);
+begin
+  if Trim(AFilter) = '' then
+  begin
+    DoRefreshData;
+  end
+  else
+  begin
+    SupplierCDS.Data := HOSxP_GetDataSet
+      ('SELECT liulin_supplier_id, liulin_supplier_name, liulin_supplier_contact FROM liulin_supplier '
+      + 'WHERE liulin_supplier_name LIKE ''%' + AFilter + '%''');
+  end;
+end;
+
+end.

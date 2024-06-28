@@ -1,0 +1,49 @@
+unit HOSxPLiulinSupplierEntryFormUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, dxSkinsCore, dxSkinBlack, dxSkinBlue, dxSkinCaramel, dxSkinCoffee,
+  dxSkinGlassOceans, dxSkiniMaginary, dxSkinLilian, dxSkinLiquidSky,
+  dxSkinLondonLiquidSky, dxSkinMcSkin, dxSkinMoneyTwins, dxSkinOffice2007Black,
+  dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Pink,
+  dxSkinOffice2007Silver, dxSkinsDefaultPainters, cxGraphics, cxLookAndFeels,
+  cxLookAndFeelPainters, Menus, cxControls, cxContainer, cxEdit, cxLabel,
+  cxTextEdit, StdCtrls, cxButtons;
+
+type
+  THOSxPLiulinSupplierEntryForm = class(TForm)
+    cxButton1: TcxButton;
+    cxButton2: TcxButton;
+    cxButton3: TcxButton;
+    cxTextEdit1: TcxTextEdit;
+    cxTextEdit2: TcxTextEdit;
+    cxLabel1: TcxLabel;
+    cxLabel2: TcxLabel;
+    procedure cxButton3Click(Sender: TObject);
+    procedure cxButton2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  HOSxPLiulinSupplierEntryForm: THOSxPLiulinSupplierEntryForm;
+
+implementation
+
+{$R *.dfm}
+
+procedure THOSxPLiulinSupplierEntryForm.cxButton2Click(Sender: TObject);
+begin
+//Save
+end;
+
+procedure THOSxPLiulinSupplierEntryForm.cxButton3Click(Sender: TObject);
+begin
+  Close;
+end;
+
+end.

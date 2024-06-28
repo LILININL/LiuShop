@@ -1,0 +1,54 @@
+unit HOSxPLiulinTypeListFromUnit;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters,
+  dxSkinsCore, dxSkinBlack, dxSkinBlue, dxSkinCaramel, dxSkinCoffee,
+  dxSkinGlassOceans, dxSkiniMaginary, dxSkinLilian, dxSkinLiquidSky,
+  dxSkinLondonLiquidSky, dxSkinMcSkin, dxSkinMoneyTwins, dxSkinOffice2007Black,
+  dxSkinOffice2007Blue, dxSkinOffice2007Green, dxSkinOffice2007Pink,
+  dxSkinOffice2007Silver, dxSkinsDefaultPainters, cxStyles, cxCustomData,
+  cxFilter, cxData, cxDataStorage, cxEdit, cxNavigator, dxDateRanges,
+  dxScrollbarAnnotations, DB, cxDBData, Menus, StdCtrls, cxButtons,
+  cxGridCustomTableView, cxGridTableView, cxGridDBTableView, DBClient,
+  cxGridLevel, cxClasses, cxGridCustomView, cxGrid;
+
+type
+  THOSxPLiulinTypeListFrom = class(TForm)
+    cxGrid1DBTableView1: TcxGridDBTableView;
+    cxGrid1Level1: TcxGridLevel;
+    cxGrid1: TcxGrid;
+    DataSource1: TDataSource;
+    ProductCDS: TClientDataSet;
+    cxGrid1DBTableView1Column1: TcxGridDBColumn;
+    cxGrid1DBTableView1Column2: TcxGridDBColumn;
+    cxGrid1DBTableView1Column3: TcxGridDBColumn;
+    cxGrid1DBTableView1Column4: TcxGridDBColumn;
+    cxGrid1DBTableView1Column5: TcxGridDBColumn;
+    cxGrid1DBTableView1Column6: TcxGridDBColumn;
+    cxButton1: TcxButton;
+    cxButton2: TcxButton;
+  private
+    procedure DoRefreshData;
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  HOSxPLiulinTypeListFrom: THOSxPLiulinTypeListFrom;
+
+implementation
+
+{$R *.dfm}
+{ THOSxPLiulinTypeListFrom }
+
+procedure THOSxPLiulinTypeListFrom.DoRefreshData;
+begin
+  ProductCDS.Data := HOSxP_GetDataSet
+    ('SELECT liulin_employee_id, liulin_employee_name, liulin_employee_tel FROM liulin_employee;');
+end;
+
+end.
